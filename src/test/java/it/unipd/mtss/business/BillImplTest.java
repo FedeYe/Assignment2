@@ -80,5 +80,13 @@ public class BillImplTest {
             itemsOrdered.add(new EItem( TipoItem.Keyboard, "Logitech perry",55.00));
         }
         assertEquals(340.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
-    } 
+    }
+    
+    @Test
+    public void testTotaleConScontoSeLaSpesaTotaleSuperioreAi1000Euro(){
+        for(int i=0; i<20; i++) {
+            itemsOrdered.add(new EItem( TipoItem.Motherboard, "Madre Mia",69.00));
+        }    
+        assertEquals(1242.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
 }

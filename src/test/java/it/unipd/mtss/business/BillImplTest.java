@@ -60,4 +60,13 @@ public class BillImplTest {
         }       
         assertEquals(825.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
+
+    @Test
+    public void testTotaleConMouseMenoCostosoRegalatoSeNumeroDiMousePiùDiDieci() {
+
+        for(int i=0; i<11; i++) {
+            itemsOrdered.add(new EItem( TipoItem.Mouse, "Poseidon",40.00));
+        }       
+        assertEquals(400.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
 }
